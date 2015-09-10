@@ -297,7 +297,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
     
     // Check if an image or progress ring is displayed
     BOOL imageUsed = (self.imageView.image) || (self.imageView.hidden);
-    BOOL progressUsed = (self.progress != SVProgressHUDUndefinedProgress) && (self.progress >= 0.0f);
+    BOOL progressUsed = ((self.progress != SVProgressHUDUndefinedProgress) && (self.progress >= 0.0f)) || (self.imageView.hidden && self.progress == SVProgressHUDUndefinedProgress);
     
 	self.hudView.bounds = CGRectMake(0.0f, 0.0f, hudWidth, hudHeight);
     [self.imageView sizeToFit];
